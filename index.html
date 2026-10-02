@@ -1,0 +1,347 @@
+<title>AGD Güngören Gizlilik Politikası</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #f4f5f8;
+    --surface: #ffffff;
+    --text: #1a1f2b;
+    --text-muted: #5b6472;
+    --border: #e2e5ea;
+    --accent: #1e40af;
+    --accent-soft: #eaefff;
+    --accent-ink: #1e40af;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12151c;
+      --surface: #191d26;
+      --text: #e9ebf0;
+      --text-muted: #9aa2b1;
+      --border: #2a2f3b;
+      --accent: #7c9cff;
+      --accent-soft: rgba(124, 156, 255, 0.14);
+      --accent-ink: #a8bcff;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151c;
+    --surface: #191d26;
+    --text: #e9ebf0;
+    --text-muted: #9aa2b1;
+    --border: #2a2f3b;
+    --accent: #7c9cff;
+    --accent-soft: rgba(124, 156, 255, 0.14);
+    --accent-ink: #a8bcff;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    padding-inline: 20px;
+    padding-block: 48px;
+    line-height: 1.65;
+  }
+  h1, h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    text-wrap: balance;
+  }
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(160deg, #1e40af, #3b82f6);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+  }
+  .org {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 36px);
+    font-weight: 700;
+    margin: 0 0 6px;
+    line-height: 1.15;
+  }
+  .updated {
+    color: var(--text-muted);
+    font-size: 13.5px;
+    margin-bottom: 32px;
+  }
+  .lede {
+    font-size: 16px;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+
+  nav.toc {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 40px;
+  }
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  nav.toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 7px;
+  }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14.5px;
+    display: flex;
+    gap: 10px;
+  }
+  nav.toc a:hover { color: var(--accent-ink); }
+  nav.toc .n {
+    color: var(--accent-ink);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    width: 20px;
+    flex-shrink: 0;
+  }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 20px;
+  }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .sec-num {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    border-radius: 7px;
+    padding: 3px 9px;
+    flex-shrink: 0;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+  section p {
+    margin: 0 0 12px;
+    color: var(--text);
+    max-width: 62ch;
+  }
+  section p.muted { color: var(--text-muted); font-size: 14.5px; }
+  ul {
+    margin: 0 0 12px;
+    padding-left: 20px;
+  }
+  li { margin-bottom: 6px; max-width: 60ch; }
+  strong { font-weight: 600; }
+
+  .datatable {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .datatable-wrap { overflow-x: auto; margin-bottom: 12px; }
+  .datatable th {
+    text-align: left;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--accent-soft);
+    white-space: nowrap;
+  }
+  .datatable td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .datatable tr:last-child td { border-bottom: none; }
+
+  footer {
+    color: var(--text-muted);
+    font-size: 12.5px;
+    text-align: center;
+    margin-top: 56px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+</style>
+
+<div class="page">
+  <div class="masthead">
+    <div class="mark">AGD</div>
+    <div class="org">ANADOLU GENÇLİK DERNEĞİ — GÜNGÖREN ŞUBESİ</div>
+  </div>
+
+  <h1>Gizlilik Politikası</h1>
+  <p class="updated">Son güncelleme: 2 Ekim 2026 · Bu politika AGD Güngören mobil uygulaması için geçerlidir.</p>
+
+  <p class="lede">Bu sayfa, AGD Güngören uygulamasını kullanırken hangi verilerinizin toplandığını, nasıl kullanıldığını ve haklarınızın neler olduğunu açık bir dille anlatır. Uygulamayı kullanarak bu politikayı kabul etmiş olursunuz.</p>
+
+  <nav class="toc" aria-label="İçindekiler">
+    <p>İçindekiler</p>
+    <ol>
+      <li><a href="#veri-sorumlusu"><span class="n">01</span>Veri Sorumlusu</a></li>
+      <li><a href="#topladigimiz-veriler"><span class="n">02</span>Topladığımız Veriler</a></li>
+      <li><a href="#kullanim-amaclari"><span class="n">03</span>Kullanım Amaçları</a></li>
+      <li><a href="#ucuncu-taraflar"><span class="n">04</span>Üçüncü Taraflarla Paylaşım</a></li>
+      <li><a href="#saklama-suresi"><span class="n">05</span>Saklama Süresi</a></li>
+      <li><a href="#veri-guvenligi"><span class="n">06</span>Veri Güvenliği</a></li>
+      <li><a href="#haklariniz"><span class="n">07</span>Haklarınız</a></li>
+      <li><a href="#cocuklarin-gizliligi"><span class="n">08</span>Çocukların Gizliliği</a></li>
+      <li><a href="#degisiklikler"><span class="n">09</span>Politikadaki Değişiklikler</a></li>
+      <li><a href="#iletisim"><span class="n">10</span>İletişim</a></li>
+    </ol>
+  </nav>
+
+  <section id="veri-soromlusu">
+    <div class="sec-head"><span class="sec-num">01</span><h2 id="veri-sorumlusu">Veri Sorumlusu</h2></div>
+    <p>Bu uygulama <strong>Anadolu Gençlik Derneği Güngören Şubesi</strong> tarafından, şube üyelerine ve gönüllülerine etkinlik, dergi ve duyuru içeriklerini ulaştırmak amacıyla işletilir. Kişisel verileriniz 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında bu bölümün altındaki esaslara göre işlenir. Sorularınız için: <a href="mailto:agdgngtech@gmail.com">agdgngtech@gmail.com</a></p>
+  </section>
+
+  <section id="topladigimiz-veriler-sec">
+    <div class="sec-head"><span class="sec-num">02</span><h2 id="topladigimiz-veriler">Topladığımız Veriler</h2></div>
+    <p>Yalnızca uygulamanın çalışması için gerekli olan verileri topluyoruz. Konum, kişi rehberi veya ödeme bilgisi <strong>hiçbir şekilde</strong> toplanmaz. Kamera yalnızca etkinlik yoklamasındaki QR kodu okutmak için, siz izin verdiğinizde kullanılır; görüntü kaydedilmez ve sunucuya gönderilmez.</p>
+    <div class="datatable-wrap">
+      <table class="datatable">
+        <thead>
+          <tr><th>Veri</th><th>Ne zaman</th><th>Zorunlu mu</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ad soyad, e-posta, şifre</td><td>Hesap oluştururken</td><td>Üyelik için evet</td></tr>
+          <tr><td>Doğum tarihi</td><td>Kayıt sırasında (isteğe bağlı)</td><td>Sadece yaş sınırlı etkinliklere katılmak için</td></tr>
+          <tr><td>Etkinlik katılım / check-in kayıtları</td><td>"Katıl" veya QR okutma anında</td><td>İlgili özelliği kullanınca</td></tr>
+          <tr><td>Dergiye gönderilen yazılar</td><td>Yazı gönderiminde</td><td>İlgili özelliği kullanınca</td></tr>
+          <tr><td>Push bildirim token'ı</td><td>Bildirim izni verildiğinde</td><td>Hayır, izne bağlı</td></tr>
+          <tr><td>Tema / bildirim tercihleri</td><td>Ayarları değiştirdiğinizde</td><td>Hayır</td></tr>
+          <tr><td>Namaz vakti hatırlatıcı tercihleri</td><td>Hatırlatıcı kurduğunuzda</td><td>Hayır</td></tr>
+          <tr><td>Puan ve sıralama (QR katılımlarından türeyen)</td><td>QR ile katılım yaptığınızda</td><td>İlgili özelliği kullanınca</td></tr>
+          <tr><td>Üyelik görevi (örn. "Eğitim Başkanı") ve yönetici yetkisi</td><td>Dernek yönetimi atadığında</td><td>Hayır</td></tr>
+          <tr><td>Profilinizin diğer üyelere görünürlüğü ayarı</td><td>Profil ayarlarında</td><td>Hayır</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Misafir modunda (giriş yapmadan) gezinirken hiçbir kişisel veri sunucuya gönderilmez.</p>
+  </section>
+
+  <section id="kullanim-amaclari-sec">
+    <div class="sec-head"><span class="sec-num">03</span><h2 id="kullanim-amaclari">Kullanım Amaçları</h2></div>
+    <ul>
+      <li>Hesabınızı oluşturmak, doğrulamak ve oturumunuzu güvende tutmak</li>
+      <li>Etkinliklere katılımınızı ve QR ile günlük katılım kaydınızı işlemek</li>
+      <li>Yaş sınırı olan etkinliklerde uygunluğunuzu kontrol etmek</li>
+      <li>Yeni etkinlik ve duyuruları push bildirimiyle iletmek (yalnızca izin verdiyseniz)</li>
+      <li>Dergiye gönderdiğiniz yazıları editör onayına sunmak ve yayınlamak</li>
+      <li>Katılım puanlarını hesaplayıp sezon sıralamasını göstermek</li>
+      <li>İstediğiniz namaz vakitlerinde hatırlatma bildirimi göndermek</li>
+      <li>Üye profillerini (ad, üyelik tarihi, katılım sayıları, rozetler ve görev) diğer üyelere göstermek. Bunu Profil ekranından kapatıp profilinizi gizleyebilirsiniz; gizlenen profil sıralamada "Gizli üye" olarak yer alır</li>
+    </ul>
+  </section>
+
+  <section id="ucuncu-taraflar-sec">
+    <div class="sec-head"><span class="sec-num">04</span><h2 id="ucuncu-taraflar">Üçüncü Taraflarla Paylaşım</h2></div>
+    <p>Verileriniz reklam amacıyla hiçbir şirkete satılmaz veya kiralanmaz. Uygulamanın çalışması için yalnızca aşağıdaki alt yüklenicilerden faydalanıyoruz:</p>
+    <div class="datatable-wrap">
+      <table class="datatable">
+        <thead>
+          <tr><th>Hizmet</th><th>Sağlayıcı</th><th>Amaç</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Veritabanı &amp; kimlik doğrulama</td><td>Supabase (AB — Frankfurt sunucusu)</td><td>Hesap, etkinlik ve dergi verilerini saklamak</td></tr>
+          <tr><td>Push bildirim</td><td>Firebase Cloud Messaging (Google)</td><td>Cihazınıza bildirim iletmek</td></tr>
+          <tr><td>Namaz vakitleri</td><td>Aladhan (aladhan.com)</td><td>Güngören için vakitleri almak. Kişisel veri gönderilmez (bağlantının doğası gereği IP adresi hariç)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="saklama-suresi-sec">
+    <div class="sec-head"><span class="sec-num">05</span><h2 id="saklama-suresi">Saklama Süresi</h2></div>
+    <p>Hesap verileriniz, hesabınız aktif olduğu sürece saklanır. Hesabınızın silinmesini talep ettiğinizde ad, e-posta, doğum tarihi ve katılım geçmişiniz makul bir süre içinde sistemden kaldırılır. Yasal yükümlülükler gerektirmedikçe veriler süresiz tutulmaz.</p>
+  </section>
+
+  <section id="veri-guvenligi-sec">
+    <div class="sec-head"><span class="sec-num">06</span><h2 id="veri-guvenligi">Veri Güvenliği</h2></div>
+    <p>Veritabanı erişimi satır düzeyinde güvenlik kurallarıyla (Row Level Security) sınırlandırılmıştır — bir kullanıcı yalnızca kendi verisine ve herkese açık içeriğe erişebilir. Bağlantılar şifrelenmiş (HTTPS/TLS) olarak iletilir. Şifreniz tarafımızca okunamayacak şekilde saklanır.</p>
+  </section>
+
+  <section id="haklariniz-sec">
+    <div class="sec-head"><span class="sec-num">07</span><h2 id="haklariniz">Haklarınız</h2></div>
+    <p>KVKK'nın 11. maddesi kapsamında şu haklara sahipsiniz:</p>
+    <ul>
+      <li>Verilerinizin işlenip işlenmediğini öğrenme</li>
+      <li>İşlenmişse buna ilişkin bilgi talep etme</li>
+      <li>Eksik veya yanlış verilerin düzeltilmesini isteme</li>
+      <li>Verilerinizin silinmesini veya yok edilmesini isteme</li>
+      <li>İşlenen verilerinizin üçüncü kişilere bildirilmesini isteme</li>
+    </ul>
+    <p>Profil ekranındaki bilgilerinizi doğrudan uygulama içinden düzenleyebilir, <strong>Profil → Hesabımı Sil</strong> ile hesabınızı ve verilerinizi kendiniz silebilirsiniz. Diğer talepleriniz için <a href="#iletisim">İletişim</a> bölümündeki adrese yazabilirsiniz.</p>
+  </section>
+
+  <section id="cocuklarin-gizliligi-sec">
+    <div class="sec-head"><span class="sec-num">08</span><h2 id="cocuklarin-gizliligi">Çocukların Gizliliği</h2></div>
+    <p>Uygulama, dernek üyesi genç ve yetişkinlere yönelik olarak tasarlanmıştır. 13 yaşından küçük çocuklardan bilerek veri toplamıyoruz. Bir veli, reşit olmayan çocuğuna ait verilerin kaldırılmasını talep ederse derhal işleme alınır.</p>
+  </section>
+
+  <section id="degisiklikler-sec">
+    <div class="sec-head"><span class="sec-num">09</span><h2 id="degisiklikler">Politikadaki Değişiklikler</h2></div>
+    <p>Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişikliklerde uygulama içinden bilgilendirme yapılır. Güncel sürüm her zaman bu sayfada yer alır.</p>
+  </section>
+
+  <section id="iletisim-sec">
+    <div class="sec-head"><span class="sec-num">10</span><h2 id="iletisim">İletişim</h2></div>
+    <p>Gizlilik, kişisel verileriniz veya hesabınızın silinmesi ile ilgili tüm talepleriniz için: <a href="mailto:agdgngtech@gmail.com">agdgngtech@gmail.com</a>. Başvurularınıza makul süre içinde yanıt veririz.</p>
+  </section>
+
+  <footer>AGD Güngören Şubesi © 2026 — Bu belge yalnızca bilgilendirme amaçlıdır.</footer>
+</div>
